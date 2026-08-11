@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Anonymous double-blind submission: no identifying meta -->
-  <meta name="title" content="Anonymous CoRL 2026 Submission">
-  <meta name="description" content="Project page for an anonymous CoRL 2026 submission. Real-robot videos.">
+  <meta name="title" content="SAP-Nav: Hierarchical Spatial Representation Meets Active Perception for Multi-Granularity Open-Vocabulary Object Navigation">
+  <meta name="description" content="SAP-Nav is a fully online, training-free navigation system that integrates active perception into scene representation and target verification for multi-granularity open-vocabulary object navigation.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="language" content="English">
 
@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <title>Anonymous CoRL 2026 Submission</title>
+  <title>SAP-Nav: Active Perception for Multi-Granularity Open-Vocabulary Object Navigation</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -76,15 +76,31 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: replace with your paper title -->
-            <h1 class="title is-1 publication-title">Paper Title (Anonymous Submission)</h1>
+            <h1 class="title is-1 publication-title">SAP-Nav: Hierarchical Spatial Representation Meets Active Perception for Multi-Granularity Open-Vocabulary Object Navigation</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Anonymous Authors</span>
+              <span class="author-block">Anonymous Authors &mdash; submission under double-blind review</span>
             </div>
 
             <div class="column has-text-centered">
               <div class="publication-links">
-                <!-- Buttons (Paper / Code / arXiv) hidden during double-blind review -->
+                <!-- Buttons (Paper / Code / arXiv) hidden during double-blind review.
+                     After acceptance, restore Nerfies-style buttons here, e.g.:
+                <span class="link-block">
+                  <a href="PAPER_PDF_URL" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="ARXIV_URL" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="CODE_URL" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                  </a>
+                </span>
+                -->
               </div>
         </div>
       </div>
@@ -93,23 +109,20 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser figure -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
+      <img src="static/images/fig1_teaser.jpg" alt="SAP-Nav teaser: active perception for multi-granularity open-vocabulary object navigation" style="width: 100%;"/>
       <h2 class="subtitle has-text-centered">
-        <!-- TODO: short caption summarizing the teaser -->
-        Real-world deployment of our method on a physical robot.
+        SAP-Nav introduces <b>active perception</b> to multi-granularity OVON, where goals span category-, room-, region-, and
+        instance-level specifications. Unlike passive methods relying on incidental observations, SAP-Nav actively seeks informative
+        viewpoints to build a hierarchical spatial-augmented representation online and identify the intended target.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End teaser figure -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -119,8 +132,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            <!-- TODO: paste your paper abstract here -->
-            [Abstract placeholder &mdash; replace with the abstract from your CoRL submission.]
+            Open-vocabulary object navigation (OVON) is commonly formulated at the category level, whereas practical instructions
+            often specify goals at different semantic granularities through room context, region identity, or instance attributes.
+            Grounding such goals online requires spatial-semantic reasoning and reliable target disambiguation. We propose
+            <b>SAP-Nav</b>, a fully online, training-free system that integrates active perception into scene representation and
+            target verification for multi-granularity OVON. SAP-Nav builds a <b>Hi</b>erarchical <b>S</b>patial-<b>A</b>ugmented
+            <b>R</b>epresentation (HiSAR) from actively acquired room views for fine-grained spatial-semantic reasoning, and employs
+            <b>A</b>ctive <b>V</b>iewpoint <b>V</b>erification (AVV) to assess view sufficiency, seek informative viewpoints, and
+            verify candidates against the specified category and attributes. Experiments on two OVON benchmarks show that SAP-Nav
+            achieves state-of-the-art performance, including an <b>8.5-point gain</b> over training-based competitors on
+            instance-level navigation, validating the effectiveness of active perception for multi-granularity goal grounding.
+            Real-world robot experiments further demonstrate its practical feasibility. Code will be made publicly available.
           </p>
         </div>
       </div>
@@ -134,36 +156,34 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3 has-text-centered">Method &amp; Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
+        <img src="static/images/fig2_method.jpg" alt="Overview of SAP-Nav: HiSAR builds a hierarchical spatial-semantic representation online; AVV closes the verification loop" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          <b>Overview of SAP-Nav.</b> Given egocentric RGB-D observations, odometry, and an instruction at any granularity,
+          SAP-Nav operates fully online through two active-perception modules: <b>HiSAR</b> converts actively acquired room views
+          into a queryable hierarchical spatial-semantic representation, and <b>AVV</b> assesses viewpoint sufficiency, actively
+          repositions to informative views, and verifies candidates against the goal category and attributes.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
+        <img src="static/images/table1_langmap.jpg" alt="Evaluation on LangMap: SAP-Nav achieves top-tier performance at all four granularity levels" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          <b>Evaluation on LangMap.</b> SAP-Nav achieves state-of-the-art SR and SPL at every granularity level, improving SR by
+          8.0 points on Single-Goal and by 8.5 points on the most challenging instance level over the strongest training-based
+          method &mdash; without any navigation training. On HM3D-OVON val unseen, SAP-Nav reaches <b>49.7 SR</b>, the highest
+          among all compared methods.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
+        <img src="static/images/fig3_realworld.jpg" alt="Real-world deployment on a quadruped robot executing multi-granularity OVON instructions" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+          <b>Real-world deployment.</b> SAP-Nav runs on a Deep Robotics Jueying Lite3 quadruped with an RGB-D camera and Lidar,
+          and executes multi-granularity OVON instructions in indoor scenes: a pillow found in the kitchen is rejected for
+          mismatching the instructed room, and the target is verified only in the living room.
+        </h2>
+      </div>
   </div>
 </div>
 </div>
@@ -176,30 +196,26 @@
 <!-- YouTube embed removed for double-blind review -->
 
 
-<!-- Real-robot video carousel -->
+<!-- Real-robot video carousel.
+     TODO: currently hidden — the mp4 files in static/videos/ are the template's demo videos.
+     Replace them with your own Jueying Lite3 recordings, then uncomment this section.
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Real-Robot Videos</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4" type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
           <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4" type="video/mp4">
           </video>
         </div>
@@ -207,6 +223,7 @@
     </div>
   </div>
 </section>
+-->
 <!-- End video carousel -->
 
 
