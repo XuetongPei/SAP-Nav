@@ -199,60 +199,6 @@
 
 
 
-<!-- Benchmark results -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Benchmark Results</h2>
-    <div class="content">
-      <div class="table-container" style="overflow-x: auto;">
-        <table class="table is-striped is-hoverable is-fullwidth" style="font-variant-numeric: tabular-nums;">
-          <thead>
-            <tr>
-              <th rowspan="2">Method</th>
-              <th rowspan="2">VLM</th>
-              <th colspan="2" class="has-text-centered">Single-Goal</th>
-              <th colspan="2" class="has-text-centered">Scene</th>
-              <th colspan="2" class="has-text-centered">Room</th>
-              <th colspan="2" class="has-text-centered">Region</th>
-              <th colspan="2" class="has-text-centered">Instance</th>
-            </tr>
-            <tr>
-              <th>SR&uarr;</th><th>SPL&uarr;</th>
-              <th>SR</th><th>SPL</th>
-              <th>SR</th><th>SPL</th>
-              <th>SR</th><th>SPL</th>
-              <th>SR</th><th>SPL</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td colspan="12"><i>Training-based methods</i></td></tr>
-            <tr><td>PSL <small>[ECCV'24]</small></td><td>&ndash;</td><td>6.6</td><td>1.8</td><td>6.0</td><td>1.4</td><td>6.6</td><td>1.9</td><td>7.3</td><td>2.1</td><td>6.4</td><td>1.9</td></tr>
-            <tr><td>SenseAct-M <small>[CVPR'24]</small></td><td>&ndash;</td><td>8.7</td><td>4.6</td><td>10.2</td><td>5.6</td><td>8.3</td><td>4.4</td><td>8.5</td><td>4.3</td><td>7.7</td><td>4.0</td></tr>
-            <tr><td>MTU3D <small>[ICCV'25]</small></td><td>&ndash;</td><td>29.7</td><td>15.4</td><td>33.1</td><td>16.7</td><td>31.4</td><td>15.9</td><td>32.7</td><td>16.5</td><td>23.8</td><td>13.9</td></tr>
-            <tr><td>Uni-NaVid <small>[RSS'25]</small></td><td>&ndash;</td><td>30.3</td><td>15.3</td><td>33.8</td><td>16.2</td><td>33.2</td><td>16.5</td><td>30.1</td><td>15.5</td><td>26.2</td><td>13.8</td></tr>
-            <tr><td>PlaNaVid <small>[arXiv'26]</small></td><td>Qwen2.5-VL-7B</td><td>31.4</td><td>15.2</td><td>34.4</td><td>16.5</td><td>35.6</td><td>16.7</td><td>31.6</td><td>15.5</td><td>26.2</td><td>13.1</td></tr>
-            <tr><td colspan="12"><i>Training-free methods</i></td></tr>
-            <tr><td>VLFM&dagger; <small>[ICRA'24]</small></td><td>BLIP-2</td><td>12.8</td><td>7.5</td><td>16.9</td><td>9.7</td><td>15.3</td><td>8.9</td><td>11.6</td><td>6.7</td><td>9.9</td><td>6.1</td></tr>
-            <tr><td rowspan="2">3D-Mem <small>[CVPR'25]</small></td><td>Qwen2.5-VL-3B</td><td>15.3</td><td>2.8</td><td>20.7</td><td>3.7</td><td>20.3</td><td>4.0</td><td>13.4</td><td>2.3</td><td>10.2</td><td>1.8</td></tr>
-            <tr><td>Qwen2.5-VL-7B</td><td>21.2</td><td>8.7</td><td>21.3</td><td>8.4</td><td>18.8</td><td>8.1</td><td>21.7</td><td>8.8</td><td>22.7</td><td>9.2</td></tr>
-            <tr><td rowspan="3"><b>SAP-Nav (Ours)</b></td><td>Qwen2.5-VL-7B</td><td>29.4</td><td>11.2</td><td>28.8</td><td>9.4</td><td>30.1</td><td>10.7</td><td>33.6</td><td>12.1</td><td>25.1</td><td>11.7</td></tr>
-            <tr><td>Qwen3.5-9B</td><td>36.6</td><td>18.8</td><td>41.4</td><td>22.4</td><td>41.9</td><td>21.2</td><td>40.8</td><td>20.3</td><td>26.5</td><td>13.6</td></tr>
-            <tr><td>Qwen3-VL-235B-A22B-thinking</td><td><b>39.6</b></td><td><b>19.9</b></td><td><b>43.7</b></td><td><b>22.5</b></td><td><b>47.7</b></td><td><b>23.7</b></td><td><b>43.8</b></td><td><b>21.4</b></td><td><b>26.8</b></td><td><b>14.0</b></td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="has-text-justified">
-        <b>Evaluation on <a href="https://bo-miao.github.io/LangMap/" target="_blank" rel="noopener">LangMap</a> using concise descriptions.</b> Single-Goal reports the average performance over all single-goal
-        episodes. SAP-Nav achieves top-tier performance at all four granularity levels without task-specific training.
-        VLFM&dagger; is re-run with its official implementation, prompted with granularity-specific goal information for frontier
-        value estimation. On the <b>HM3D-OVON</b> val unseen split, SAP-Nav (GPT-4o) further attains <b>49.7 SR</b>, the
-        top-ranked success rate among all compared methods on standard scene-level OVON.
-      </p>
-    </div>
-  </div>
-</section>
-<!-- End benchmark results -->
-
 <!-- Simulation demonstrations -->
 <section class="section">
   <div class="container">
