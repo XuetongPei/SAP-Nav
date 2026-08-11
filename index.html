@@ -4,10 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Anonymous double-blind submission: no identifying meta -->
-  <meta name="title" content="SAP-Nav: Hierarchical Spatial Representation Meets Active Perception for Multi-Granularity Open-Vocabulary Object Navigation">
-  <meta name="description" content="SAP-Nav is a fully online, training-free navigation system that integrates active perception into scene representation and target verification for multi-granularity open-vocabulary object navigation.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="title" content="SAP-Nav: Spatial Semantic Representation Meets Active Perception for Hierarchical Open-Vocabulary Object Navigation">
+  <meta name="description" content="SAP-Nav is a fully online, zero-shot navigation framework that combines a Queryable Spatial-Semantic Representation with Active Viewpoint Verification for hierarchical open-vocabulary object navigation.">
   <meta name="language" content="English">
 
   <meta name="theme-color" content="#2563eb">
@@ -23,7 +21,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <title>SAP-Nav: Active Perception for Multi-Granularity Open-Vocabulary Object Navigation</title>
+  <title>SAP-Nav: Spatial Semantic Representation Meets Active Perception for Hierarchical Open-Vocabulary Object Navigation</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
@@ -76,9 +74,10 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SAP-Nav: Hierarchical Spatial Representation Meets Active Perception for Multi-Granularity Open-Vocabulary Object Navigation</h1>
+            <h1 class="title is-1 publication-title">SAP-Nav: Spatial Semantic Representation Meets Active Perception for Hierarchical Open-Vocabulary Object Navigation</h1>
             <div class="is-size-5 publication-authors">
-              <span class="author-block">Anonymous Authors &mdash; submission under double-blind review</span>
+              <!-- TODO: add co-authors, affiliations, and homepage links -->
+              <span class="author-block">Xuetong Pei</span>
             </div>
 
             <div class="column has-text-centered">
@@ -108,11 +107,12 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/fig1_teaser.jpg" alt="SAP-Nav teaser: active perception for multi-granularity open-vocabulary object navigation" style="width: 100%;"/>
+      <img src="static/images/teaser.jpg" alt="SAP-Nav teaser: active perception for hierarchical open-vocabulary object navigation" style="width: 100%;"/>
       <h2 class="subtitle has-text-centered">
-        SAP-Nav introduces <b>active perception</b> to multi-granularity OVON, where goals span category-, room-, region-, and
-        instance-level specifications. Unlike passive methods relying on incidental observations, SAP-Nav actively seeks informative
-        viewpoints to build a hierarchical spatial-augmented representation online and identify the intended target.
+        SAP-Nav introduces <b>active perception</b> into hierarchical OVON, where goals span scene-, room-, region-, and
+        instance-level specifications. Unlike passive methods relying on observations encountered during navigation, SAP-Nav
+        actively seeks informative viewpoints to build a queryable spatial semantic representation online and identify the
+        intended target.
       </h2>
     </div>
   </div>
@@ -127,17 +127,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Open-vocabulary object navigation (OVON) is commonly formulated at the category level, whereas practical instructions
-            often specify goals at different semantic granularities through room context, region identity, or instance attributes.
-            Grounding such goals online requires spatial-semantic reasoning and reliable target disambiguation. We propose
-            <b>SAP-Nav</b>, a fully online, training-free system that integrates active perception into scene representation and
-            target verification for multi-granularity OVON. SAP-Nav builds a <b>Hi</b>erarchical <b>S</b>patial-<b>A</b>ugmented
-            <b>R</b>epresentation (HiSAR) from actively acquired room views for fine-grained spatial-semantic reasoning, and employs
-            <b>A</b>ctive <b>V</b>iewpoint <b>V</b>erification (AVV) to assess view sufficiency, seek informative viewpoints, and
-            verify candidates against the specified category and attributes. Experiments on two OVON benchmarks show that SAP-Nav
-            achieves state-of-the-art performance, including an <b>8.5-point gain</b> over training-based competitors on
-            instance-level navigation, validating the effectiveness of active perception for multi-granularity goal grounding.
-            Real-world robot experiments further demonstrate its practical feasibility. Code will be made publicly available.
+            Hierarchical open-vocabulary object navigation (OVON) requires agents to follow free-form instructions that may specify
+            targets through scene-, room-, region-, and instance-level cues in unseen environments. Although recent work LangMap
+            has formalized this setting, reliably solving it under partial observations remains challenging: spatial grounding
+            requires persistent environment-level evidence, whereas target verification requires clear and discriminative candidate
+            views. We present <b>SAP-Nav</b>, a fully online, zero-shot framework that addresses both requirements through active
+            perception. SAP-Nav incrementally constructs a <b>Q</b>ueryable <b>S</b>patial-<b>S</b>emantic <b>R</b>epresentation
+            (QSSR) from actively acquired room views, enabling spatial semantic queries from any explored location. It further
+            employs <b>A</b>ctive <b>V</b>iewpoint <b>V</b>erification (AVV) to assess whether the current observation provides
+            sufficient evidence and, when necessary, reposition the agent to a more informative viewpoint before verifying
+            candidates against category and attribute constraints. Although designed for hierarchical OVON, SAP-Nav supports both
+            hierarchical and standard category-level OVON without task-specific training or precomputed scene maps. Experiments on
+            LangMap and HM3D-OVON show that SAP-Nav achieves the overall best performance, including a <b>12.2% improvement in
+            SR</b> over training-based methods on region-level navigation. Real-world robot experiments further demonstrate its
+            practical feasibility. Code will be made publicly available upon acceptance.
           </p>
         </div>
       </div>
@@ -151,32 +154,25 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3 has-text-centered">Method &amp; Results</h2>
+      <h2 class="title is-3 has-text-centered">Method &amp; Real-World Deployment</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <img src="static/images/fig2_method.jpg" alt="Overview of SAP-Nav: HiSAR builds a hierarchical spatial-semantic representation online; AVV closes the verification loop" loading="lazy"/>
+        <img src="static/images/framework.jpg" alt="Overview of SAP-Nav: QSSR builds a queryable spatial-semantic representation online; AVV closes the verification loop" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
           <b>Overview of SAP-Nav.</b> Given egocentric RGB-D observations, odometry, and an instruction at any granularity,
-          SAP-Nav operates fully online through two active-perception modules: <b>HiSAR</b> converts actively acquired room views
-          into a queryable hierarchical spatial-semantic representation, and <b>AVV</b> assesses viewpoint sufficiency, actively
-          repositions to informative views, and verifies candidates against the goal category and attributes.
+          SAP-Nav operates through two active-perception modules: <b>QSSR</b> converts actively acquired online observations into
+          a queryable spatial semantic representation, from room segmentation to sub-room semantics, and <b>AVV</b> closes the
+          verification loop by assessing viewpoint sufficiency, actively repositioning to informative views, and verifying
+          candidates against the goal category and attributes; rejected candidates are blacklisted and exploration continues.
         </h2>
       </div>
       <div class="item">
-        <img src="static/images/table1_langmap.jpg" alt="Evaluation on LangMap: SAP-Nav achieves top-tier performance at all four granularity levels" loading="lazy"/>
+        <img src="static/images/real_world.jpg" alt="Real-world deployment on a quadruped robot executing hierarchical OVON instructions" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          <b>Evaluation on LangMap.</b> SAP-Nav achieves state-of-the-art SR and SPL at every granularity level, improving SR by
-          8.0 points on Single-Goal and by 8.5 points on the most challenging instance level over the strongest training-based
-          method &mdash; without any navigation training. On HM3D-OVON val unseen, SAP-Nav reaches <b>49.7 SR</b>, the highest
-          among all compared methods.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/fig3_realworld.jpg" alt="Real-world deployment on a quadruped robot executing multi-granularity OVON instructions" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          <b>Real-world deployment.</b> SAP-Nav runs on a Deep Robotics Jueying Lite3 quadruped with an RGB-D camera and Lidar,
-          and executes multi-granularity OVON instructions in indoor scenes: a pillow found in the kitchen is rejected for
-          mismatching the instructed room, and the target is verified only in the living room.
+          <b>Real-world deployment.</b> SAP-Nav executes hierarchical OVON instructions in indoor scenes on a quadruped robot.
+          Room-level: a pillow found in the kitchen is rejected for mismatching the instructed room, and the target is localized
+          in the living room. Instance-level: an ambiguous, occluded observation triggers viewpoint selection, and the potted
+          plant with slender leaves is verified from an informative view.
         </h2>
       </div>
   </div>
@@ -187,6 +183,60 @@
 
 
 
+
+<!-- Benchmark results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Benchmark Results</h2>
+    <div class="content">
+      <div class="table-container" style="overflow-x: auto;">
+        <table class="table is-striped is-hoverable is-fullwidth" style="font-variant-numeric: tabular-nums;">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th rowspan="2">VLM</th>
+              <th colspan="2" class="has-text-centered">Single-Goal</th>
+              <th colspan="2" class="has-text-centered">Scene</th>
+              <th colspan="2" class="has-text-centered">Room</th>
+              <th colspan="2" class="has-text-centered">Region</th>
+              <th colspan="2" class="has-text-centered">Instance</th>
+            </tr>
+            <tr>
+              <th>SR&uarr;</th><th>SPL&uarr;</th>
+              <th>SR</th><th>SPL</th>
+              <th>SR</th><th>SPL</th>
+              <th>SR</th><th>SPL</th>
+              <th>SR</th><th>SPL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="12"><i>Training-based methods</i></td></tr>
+            <tr><td>PSL <small>[ECCV'24]</small></td><td>&ndash;</td><td>6.6</td><td>1.8</td><td>6.0</td><td>1.4</td><td>6.6</td><td>1.9</td><td>7.3</td><td>2.1</td><td>6.4</td><td>1.9</td></tr>
+            <tr><td>SenseAct-M <small>[CVPR'24]</small></td><td>&ndash;</td><td>8.7</td><td>4.6</td><td>10.2</td><td>5.6</td><td>8.3</td><td>4.4</td><td>8.5</td><td>4.3</td><td>7.7</td><td>4.0</td></tr>
+            <tr><td>MTU3D <small>[ICCV'25]</small></td><td>&ndash;</td><td>29.7</td><td>15.4</td><td>33.1</td><td>16.7</td><td>31.4</td><td>15.9</td><td>32.7</td><td>16.5</td><td>23.8</td><td>13.9</td></tr>
+            <tr><td>Uni-NaVid <small>[RSS'25]</small></td><td>&ndash;</td><td>30.3</td><td>15.3</td><td>33.8</td><td>16.2</td><td>33.2</td><td>16.5</td><td>30.1</td><td>15.5</td><td>26.2</td><td>13.8</td></tr>
+            <tr><td>PlaNaVid <small>[arXiv'26]</small></td><td>Qwen2.5-VL-7B</td><td>31.4</td><td>15.2</td><td>34.4</td><td>16.5</td><td>35.6</td><td>16.7</td><td>31.6</td><td>15.5</td><td>26.2</td><td>13.1</td></tr>
+            <tr><td colspan="12"><i>Training-free methods</i></td></tr>
+            <tr><td>VLFM&dagger; <small>[ICRA'24]</small></td><td>BLIP-2</td><td>12.8</td><td>7.5</td><td>16.9</td><td>9.7</td><td>15.3</td><td>8.9</td><td>11.6</td><td>6.7</td><td>9.9</td><td>6.1</td></tr>
+            <tr><td rowspan="2">3D-Mem <small>[CVPR'25]</small></td><td>Qwen2.5-VL-3B</td><td>15.3</td><td>2.8</td><td>20.7</td><td>3.7</td><td>20.3</td><td>4.0</td><td>13.4</td><td>2.3</td><td>10.2</td><td>1.8</td></tr>
+            <tr><td>Qwen2.5-VL-7B</td><td>21.2</td><td>8.7</td><td>21.3</td><td>8.4</td><td>18.8</td><td>8.1</td><td>21.7</td><td>8.8</td><td>22.7</td><td>9.2</td></tr>
+            <tr><td rowspan="3"><b>SAP-Nav (Ours)</b></td><td>Qwen2.5-VL-7B</td><td>29.4</td><td>11.2</td><td>28.8</td><td>9.4</td><td>30.1</td><td>10.7</td><td>33.6</td><td>12.1</td><td>25.1</td><td>11.7</td></tr>
+            <tr><td>Qwen3.5-9B</td><td>36.6</td><td>18.8</td><td>41.4</td><td>22.4</td><td>41.9</td><td>21.2</td><td>40.8</td><td>20.3</td><td>26.5</td><td>13.6</td></tr>
+            <tr><td>Qwen3-VL-235B-A22B-thinking</td><td><b>39.6</b></td><td><b>19.9</b></td><td><b>43.7</b></td><td><b>22.5</b></td><td><b>47.7</b></td><td><b>23.7</b></td><td><b>43.8</b></td><td><b>21.4</b></td><td><b>26.8</b></td><td><b>14.0</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="has-text-justified">
+        <b>Evaluation on LangMap using concise descriptions.</b> Single-Goal reports the average performance over all single-goal
+        episodes. SAP-Nav achieves top-tier performance at all four granularity levels without task-specific training.
+        VLFM&dagger; is re-run with its official implementation, prompted with granularity-specific goal information for frontier
+        value estimation. On the <b>HM3D-OVON</b> val unseen split, SAP-Nav (GPT-4o) further attains <b>49.7 SR</b>, the
+        top-ranked success rate among all compared methods on standard scene-level OVON.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End benchmark results -->
 
 <!-- YouTube embed removed for double-blind review -->
 
@@ -239,7 +289,12 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>BibTeX will be available after the double-blind review process.</code></pre>
+      <pre id="bibtex-code"><code>@article{pei2026sapnav,
+  title   = {SAP-Nav: Spatial Semantic Representation Meets Active Perception for Hierarchical Open-Vocabulary Object Navigation},
+  author  = {Pei, Xuetong and others},
+  journal = {Under review},
+  year    = {2026}
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
