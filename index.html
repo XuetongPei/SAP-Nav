@@ -139,7 +139,8 @@
         <div class="content has-text-justified">
           <p>
             Hierarchical open-vocabulary object navigation (OVON) requires agents to follow free-form instructions that may specify
-            targets through scene-, room-, region-, and instance-level cues in unseen environments. Although recent work LangMap
+            targets through scene-, room-, region-, and instance-level cues in unseen environments. Although recent work
+            <a href="https://bo-miao.github.io/LangMap/" target="_blank" rel="noopener">LangMap</a>
             has formalized this setting, reliably solving it under partial observations remains challenging: spatial grounding
             requires persistent environment-level evidence, whereas target verification requires clear and discriminative candidate
             views. We present <b>SAP-Nav</b>, a fully online, zero-shot framework that addresses both requirements through active
@@ -238,7 +239,7 @@
         </table>
       </div>
       <p class="has-text-justified">
-        <b>Evaluation on LangMap using concise descriptions.</b> Single-Goal reports the average performance over all single-goal
+        <b>Evaluation on <a href="https://bo-miao.github.io/LangMap/" target="_blank" rel="noopener">LangMap</a> using concise descriptions.</b> Single-Goal reports the average performance over all single-goal
         episodes. SAP-Nav achieves top-tier performance at all four granularity levels without task-specific training.
         VLFM&dagger; is re-run with its official implementation, prompted with granularity-specific goal information for frontier
         value estimation. On the <b>HM3D-OVON</b> val unseen split, SAP-Nav (GPT-4o) further attains <b>49.7 SR</b>, the
