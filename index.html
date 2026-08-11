@@ -150,36 +150,36 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Method &amp; Real-World Deployment</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/framework.jpg" alt="Overview of SAP-Nav: QSSR builds a queryable spatial-semantic representation online; AVV closes the verification loop" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          <b>Overview of SAP-Nav.</b> Given egocentric RGB-D observations, odometry, and an instruction at any granularity,
-          SAP-Nav operates through two active-perception modules: <b>QSSR</b> converts actively acquired online observations into
-          a queryable spatial semantic representation, from room segmentation to sub-room semantics, and <b>AVV</b> closes the
-          verification loop by assessing viewpoint sufficiency, actively repositioning to informative views, and verifying
-          candidates against the goal category and attributes; rejected candidates are blacklisted and exploration continues.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/real_world.jpg" alt="Real-world deployment on a quadruped robot executing hierarchical OVON instructions" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          <b>Real-world deployment.</b> SAP-Nav executes hierarchical OVON instructions in indoor scenes on a quadruped robot.
-          Room-level: a pillow found in the kitchen is rejected for mismatching the instructed room, and the target is localized
-          in the living room. Instance-level: an ambiguous, occluded observation triggers viewpoint selection, and the potted
-          plant with slender leaves is verified from an informative view.
-        </h2>
-      </div>
+<!-- Method -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+    <img src="static/images/framework.jpg" alt="Overview of SAP-Nav: QSSR builds a queryable spatial-semantic representation online; AVV closes the verification loop" loading="lazy" style="width: 100%;"/>
+    <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+      <b>Overview of SAP-Nav.</b> Given egocentric RGB-D observations, odometry, and an instruction at any granularity,
+      SAP-Nav operates through two active-perception modules: <b>QSSR</b> converts actively acquired online observations into
+      a queryable spatial semantic representation, from room segmentation to sub-room semantics, and <b>AVV</b> closes the
+      verification loop by assessing viewpoint sufficiency, actively repositioning to informative views, and verifying
+      candidates against the goal category and attributes; rejected candidates are blacklisted and exploration continues.
+    </h2>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End method -->
+
+<!-- Real-world deployment -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Real-World Deployment</h2>
+    <img src="static/images/real_world.jpg" alt="Real-world deployment on a quadruped robot executing hierarchical OVON instructions" loading="lazy" style="width: 100%;"/>
+    <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+      SAP-Nav executes hierarchical OVON instructions in indoor scenes on a quadruped robot.
+      <b>Room-level:</b> a pillow found in the kitchen is rejected for mismatching the instructed room, and the target is localized
+      in the living room. <b>Instance-level:</b> an ambiguous, occluded observation triggers viewpoint selection, and the potted
+      plant with slender leaves is verified from an informative view.
+    </h2>
+  </div>
+</section>
+<!-- End real-world deployment -->
 
 
 
