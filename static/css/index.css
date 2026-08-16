@@ -492,6 +492,11 @@ code {
   margin-bottom: 1rem;
 }
 
+.bibtex-header .title {
+  font-size: 2.5rem !important;
+  margin-bottom: 0 !important;
+}
+
 .bibtex-intro {
   color: var(--text-primary);
   margin-bottom: 1rem;
