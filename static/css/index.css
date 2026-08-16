@@ -61,9 +61,9 @@ body {
   margin-right: 0.15em;
 }
 
-/* Teaser: wider than the 960px page container, so both the figure and its
-   caption get more room. */
-.hero.teaser .container.is-teaser-wide {
+/* Figure sections (teaser, method): wider than the 960px page container, so
+   both the figure and its caption get more room. */
+.container.is-figure-wide {
   width: 96vw;
   max-width: 1400px;
 }
