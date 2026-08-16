@@ -467,8 +467,8 @@ pre {
   border-radius: var(--border-radius) !important;
   padding: 1.5rem !important;
   /* Keep every BibTeX line intact: no wrapping, and sized so the longest
-     line (73 chars) still fits the widened block without sideways scroll. */
-  font-size: min(1.4rem, 1.9vw) !important;
+     line (126 chars) still fits the widened block without sideways scroll. */
+  font-size: min(1.1rem, 1.15vw) !important;
   line-height: 1.6;
   color: #000000 !important;
   white-space: pre !important;
