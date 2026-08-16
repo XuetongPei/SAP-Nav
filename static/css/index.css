@@ -447,14 +447,17 @@ pre {
   border: 1px solid var(--border-color) !important;
   border-radius: var(--border-radius) !important;
   padding: 1.5rem !important;
-  font-size: 0.9rem !important;
+  font-size: 1.25rem !important;
+  line-height: 1.6;
+  color: #000000 !important;
   overflow-x: auto;
   box-shadow: var(--shadow-sm);
 }
 
 code {
   background: var(--background-accent) !important;
-  color: var(--text-primary) !important;
+  color: #000000 !important;
+  font-size: inherit !important;
   font-family: 'SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace !important;
 }
 
