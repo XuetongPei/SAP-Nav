@@ -416,6 +416,11 @@ code {
   margin-bottom: 1rem;
 }
 
+.bibtex-intro {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
 .copy-bibtex-btn {
   background: var(--primary-color);
   color: white;
