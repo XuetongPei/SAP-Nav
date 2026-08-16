@@ -359,13 +359,27 @@ body {
 
 /* Content Improvements */
 .content.has-text-justified {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #000000;
 }
 
 .content.has-text-justified p {
   margin-bottom: 1.5rem;
+}
+
+/* Body copy across the page: larger, pure black.
+   Covers the abstract, figure captions and the citation intro line. */
+.section .subtitle,
+.hero .subtitle,
+.bibtex-intro {
+  font-size: 1.25rem !important;
+  line-height: 1.7;
+  color: #000000 !important;
+}
+
+.section p.subtitle.is-6 {
+  font-size: 1.15rem !important;
 }
 
 /* Footer Improvements */
