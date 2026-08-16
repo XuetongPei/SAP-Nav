@@ -125,14 +125,20 @@ body {
 /* Break the title exactly once (after "Active Perception") and nowhere else:
    each half stays on one line, and the block is allowed to run wider than the
    960px container so the type does not have to shrink too far. */
+/* Title typography matched to https://naoki.io/portfolio/vlfm.html, which is
+   plain Bootstrap 5: system sans stack, weight 500, 2.5rem at desktop.
+   The vw term below 2.5rem is ours — it keeps each half on one line. */
 .publication-title.is-one-break {
-    width: 94vw;
-    max-width: 1320px;
+    width: 96vw;
+    max-width: 1400px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(1.3rem, 2.7vw, 2.4rem) !important;
-    font-weight: 400 !important;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+                 "Noto Sans", "Liberation Sans", Arial, sans-serif !important;
+    font-size: clamp(1.3rem, 2.7vw, 2.5rem) !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
 }
 
 .publication-title.is-one-break .title-line {
