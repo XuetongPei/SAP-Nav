@@ -122,6 +122,23 @@ body {
     line-height: 1.1 !important;
 }
 
+/* Break the title exactly once (after "Active Perception") and nowhere else:
+   each half stays on one line, and the block is allowed to run wider than the
+   960px container so the type does not have to shrink too far. */
+.publication-title.is-one-break {
+    width: 94vw;
+    max-width: 1320px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.15rem, 2.35vw, 2.1rem) !important;
+}
+
+.publication-title.is-one-break .title-line {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 .publication-banner {
   max-height: 70vh;
   border-radius: var(--border-radius-lg);
@@ -203,6 +220,16 @@ body {
 .author-block {
   display: inline-block;
   margin-right: 0.5rem;
+}
+
+/* Keep the author list on a single line: shrink with the viewport, never wrap. */
+.publication-authors.is-one-line {
+  white-space: nowrap;
+  font-size: clamp(0.85rem, 1.85vw, 1.1rem) !important;
+}
+
+.publication-authors.is-one-line .author-block {
+  margin-right: 0.35rem;
 }
 
 .publication-banner img {
@@ -613,8 +640,19 @@ code {
     line-height: 1.2 !important;
     margin-bottom: 1.5rem !important;
   }
+
+  /* Too narrow to hold each half on one line — keep the break, allow wrapping. */
+  .publication-title.is-one-break .title-line {
+    white-space: normal;
+  }
   
   .publication-authors {
+    font-size: 1rem !important;
+  }
+
+  /* Too narrow for one line — fall back to wrapping. */
+  .publication-authors.is-one-line {
+    white-space: normal;
     font-size: 1rem !important;
   }
   
