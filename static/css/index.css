@@ -131,7 +131,8 @@ body {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    font-size: clamp(1.15rem, 2.35vw, 2.1rem) !important;
+    font-size: clamp(1.3rem, 2.7vw, 2.4rem) !important;
+    font-weight: 400 !important;
 }
 
 .publication-title.is-one-break .title-line {
@@ -222,14 +223,25 @@ body {
   margin-right: 0.5rem;
 }
 
-/* Keep the author list on a single line: shrink with the viewport, never wrap. */
+/* Keep the author list on a single line: shrink with the viewport, never wrap.
+   Like the title, it may run wider than the 960px container to buy room. */
 .publication-authors.is-one-line {
   white-space: nowrap;
-  font-size: clamp(0.85rem, 1.85vw, 1.1rem) !important;
+  width: 94vw;
+  max-width: 1320px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(0.9rem, 1.9vw, 1.35rem) !important;
 }
 
 .publication-authors.is-one-line .author-block {
   margin-right: 0.35rem;
+}
+
+/* Affiliations line, two steps up from Bulma's is-size-6. */
+.publication-authors.is-affiliations {
+  font-size: 1.25rem !important;
 }
 
 .publication-banner img {
@@ -689,6 +701,10 @@ code {
   .publication-authors.is-one-line {
     white-space: normal;
     font-size: 1rem !important;
+  }
+
+  .publication-authors.is-affiliations {
+    font-size: 1.05rem !important;
   }
   
   .button {
