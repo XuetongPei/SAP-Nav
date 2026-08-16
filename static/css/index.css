@@ -51,9 +51,9 @@ body {
 
 /* Header action buttons (arXiv / BibTeX / Code): larger type and hit area. */
 .publication-links .button {
-  font-size: 1.25rem !important;
+  font-size: 1.1rem !important;
   height: auto !important;
-  padding: 0.8em 1.6em !important;
+  padding: 0.65em 1.3em !important;
 }
 
 .publication-links .button .icon {
@@ -466,13 +466,12 @@ pre {
   border: 1px solid var(--border-color) !important;
   border-radius: var(--border-radius) !important;
   padding: 1.5rem !important;
-  font-size: 1.25rem !important;
+  /* Keep every BibTeX line intact: no wrapping, and sized so the longest
+     line (126 chars) still fits the widened block without sideways scroll. */
+  font-size: min(1.1rem, 1.15vw) !important;
   line-height: 1.6;
   color: #000000 !important;
-  /* Wrap long entries instead of scrolling sideways. Bulma sets
-     `.content pre { white-space: pre }`, hence the !important. */
-  white-space: pre-wrap !important;
-  word-wrap: break-word !important;
+  white-space: pre !important;
   overflow-x: auto;
   box-shadow: var(--shadow-sm);
 }
@@ -503,8 +502,8 @@ code {
   color: white;
   border: none;
   border-radius: var(--border-radius);
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
+  padding: 0.95rem 1.6rem;
+  font-size: 1.2rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
@@ -751,6 +750,19 @@ code {
   .publication-links .button {
     font-size: 1.05rem !important;
     padding: 0.7em 1.2em !important;
+  }
+
+  /* Phone screens are too narrow to hold a 126-char line at a readable
+     size — wrap there rather than shrink into illegibility. */
+  pre {
+    font-size: 0.95rem !important;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+  }
+
+  .copy-bibtex-btn {
+    padding: 0.75rem 1.1rem;
+    font-size: 1rem;
   }
   
   .more-works-container {
