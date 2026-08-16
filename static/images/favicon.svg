@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SAP-Nav">
+  <!-- Dark rounded ground -->
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+
+  <!-- Active-perception cone: the agent's field of view, fanning up from the viewpoint -->
+  <path d="M32 49 L10.1 23 A34 34 0 0 1 53.9 23 Z" fill="#ffffff" opacity="0.22"/>
+
+  <!-- Goal object caught inside the cone -->
+  <circle cx="32" cy="24" r="6.5" fill="#38bdf8"/>
+
+  <!-- The agent / viewpoint -->
+  <circle cx="32" cy="49" r="4.5" fill="#ffffff"/>
+</svg>
