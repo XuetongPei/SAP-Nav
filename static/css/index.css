@@ -368,6 +368,22 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* Bulma's .hero.is-light forces links to `color: inherit`, which made them
+   indistinguishable from body text. Give prose links the site accent back. */
+.content.has-text-justified a:not(.button) {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: var(--transition);
+}
+
+.content.has-text-justified a:not(.button):hover {
+  color: var(--primary-hover) !important;
+  text-decoration-thickness: 3px;
+}
+
 /* Body copy across the page: larger, pure black.
    Covers the abstract, figure captions and the citation intro line. */
 .section .subtitle,
