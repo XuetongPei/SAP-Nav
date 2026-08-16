@@ -388,7 +388,8 @@ body {
 
 /* Bulma's .hero.is-light forces links to `color: inherit`, which made them
    indistinguishable from body text. Give prose links the site accent back. */
-.content.has-text-justified a:not(.button) {
+.content.has-text-justified a:not(.button),
+a.prose-link {
   color: var(--primary-color) !important;
   font-weight: 600;
   text-decoration: underline;
@@ -397,7 +398,8 @@ body {
   transition: var(--transition);
 }
 
-.content.has-text-justified a:not(.button):hover {
+.content.has-text-justified a:not(.button):hover,
+a.prose-link:hover {
   color: var(--primary-hover) !important;
   text-decoration-thickness: 3px;
 }
