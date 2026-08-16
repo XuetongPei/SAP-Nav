@@ -49,6 +49,25 @@ body {
   overflow: hidden;
 }
 
+/* Header action buttons (arXiv / BibTeX / Code): larger type and hit area. */
+.publication-links .button {
+  font-size: 1.25rem !important;
+  height: auto !important;
+  padding: 0.8em 1.6em !important;
+}
+
+.publication-links .button .icon {
+  font-size: 1.1em;
+  margin-right: 0.15em;
+}
+
+/* Teaser: wider than the 960px page container, so both the figure and its
+   caption get more room. */
+.hero.teaser .container.is-teaser-wide {
+  width: 96vw;
+  max-width: 1400px;
+}
+
 .button.is-dark {
   background: var(--text-primary) !important;
   border: none !important;
@@ -727,6 +746,11 @@ code {
     margin: 0.25rem !important;
     font-size: 0.875rem !important;
     padding: 0.75rem 1rem !important;
+  }
+
+  .publication-links .button {
+    font-size: 1.05rem !important;
+    padding: 0.7em 1.2em !important;
   }
   
   .more-works-container {
