@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68,<81", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vlfm-langmap-repro"
+version = "0.1.0"
+description = "VLFM with a shortest-path local controller on LangMap single-goal tasks"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vlfm*", "scripts*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "test_langmap"]

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "completed": 1460,
+    "expected": 1460,
+    "cancelled": false,
+    "success_rate": 0.14931506849315068,
+    "spl": 0.0883318190687369
+  },
+  "room": {
+    "completed": 2289,
+    "expected": 2289,
+    "cancelled": false,
+    "success_rate": 0.11577107907383137,
+    "spl": 0.07008809229082766
+  }
+}

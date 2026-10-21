@@ -1,0 +1,11 @@
+{
+  "levels": ["object", "room"],
+  "split": "val",
+  "seed": 20261019,
+  "max_actions_per_goal": 500,
+  "workers": 32,
+  "replicas": 2,
+  "dino_threads": 4,
+  "base_port": 12181,
+  "gpu": "0"
+}

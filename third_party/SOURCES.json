@@ -1,0 +1,26 @@
+{
+  "activespin": {
+    "repository": "https://github.com/XuetongPei/ActiveSpin",
+    "branch": "vlfm",
+    "commit": "2a4ca1fe68f15581b1706bce8690d3fe0c500df8",
+    "source_file": "VLFM/scripts/convert_langmap_to_objectnav.py"
+  },
+  "langmap": {
+    "repository": "https://github.com/bo-miao/LangMap",
+    "commit": "3f2cd6e37a7f06818f515b480b0e81293a8269af",
+    "source_file": "navmesh_utils.py"
+  },
+  "sha256": {
+    "third_party/activespin/convert_langmap_to_objectnav.py": "3b56416dd2d9dd58024c3c22ac1ed914acb41bd816f75d24eed870c6c195bf93",
+    "third_party/activespin/LICENSE": "4621fb9cb10d4e809e90d2fe7ea14df74a98ce0473746a8c73bdfc8a8e79150b",
+    "third_party/langmap/navmesh_utils.py": "6d46589e4284dcc3eeb6a2845920d31948717be014a8092420a22300d02f740d"
+  },
+  "embodiedscore_envs": {
+    "repository": "https://github.com/XuetongPei/agentic",
+    "commit": "77e5ce28a0e4df70ccbc66f048f2b6f872edd696",
+    "source_directory": "MIP/thirdparty/EmbodiedScore-envs",
+    "license": "MIT",
+    "vendored": true,
+    "notes": "Frozen package included so reproduction does not require access to the source workspace."
+  }
+}

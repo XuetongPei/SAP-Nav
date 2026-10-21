@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embodiedscore-envs"
+version = "0.0.1"
+description = "Every benchmark of EmbodiedScore behind Gymnasium 1.3: the habitat lines on one frozen habitat-sim 0.3.3, VLNverse on Isaac Sim 5.1, LIBERO on robosuite / MuJoCo"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "gymnasium>=1.3",
+    "numpy>=1.24,<2",
+    "numpy-quaternion",
+    "scipy",
+    "numba",            # nDTW (benchmarks/env/dtw.py)
+    "pillow",
+    "msgpack>=1.0",
+    "msgpack-numpy",
+]
+# No simulator is a pip dependency. LIBERO (robosuite + mujoco): INSTALL-libero.md. habitat-sim: build it from
+# https://github.com/Embodied-Agent-Squad/EmbodiedScore-habitat (BUILD.md).
+# Isaac Sim 5.1 (VLNverse lines only): the render worker runs under Isaac's own
+# python, which needs msgpack + msgpack-numpy too (INSTALL-isaac.md).
+
+[project.optional-dependencies]
+test = ["pytest"]
+data = ["huggingface_hub"]     # scripts/download_vlnverse_data.py
+
+[tool.setuptools.packages.find]
+include = ["embodiedscore_envs*"]
+
+[tool.setuptools.package-data]
+embodiedscore_envs = ["benchmarks/challenge_subset.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

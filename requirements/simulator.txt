@@ -1,0 +1,21 @@
+# Actual simulator wheel used by the recorded run, Python 3.11.
+attrs==26.1.0
+cloudpickle==3.1.2
+Farama-Notifications==0.0.6
+gymnasium==1.4.0
+habitat_sim @ https://github.com/jianzhou0420/EmbodiedScore-habitat/releases/download/v0.3.3-es.1/habitat_sim-0.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl#sha256=1a43ff35f1dabf256e0e6b7be58809b24e1c933abb19185197393f14f3d6aea8
+ImageIO==2.38.1
+imageio-ffmpeg==0.6.0
+llvmlite==0.50.0
+matplotlib==3.10.8
+msgpack==1.2.3
+msgpack-numpy==0.4.8
+numba==0.68.0
+numpy==1.26.4
+numpy-quaternion==2024.0.13
+pillow==12.2.0
+pytest==9.0.2
+PyYAML==6.0.3
+scipy==1.17.1
+tqdm==4.70.1
+typing_extensions==4.16.0

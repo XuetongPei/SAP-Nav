@@ -1,0 +1,128 @@
+{
+  "upstream_commit": "584ed56008754fde7997d904983607def8328322",
+  "split": "val",
+  "counts": {
+    "object": 1460,
+    "room": 2289,
+    "region": 2687,
+    "instance": 2878
+  },
+  "body": {
+    "forward_step_m": 0.25,
+    "turn_deg": 30.0,
+    "tilt_deg": 30.0,
+    "tilt_limit_deg": null,
+    "camera_pitch_deg": 0.0,
+    "pitch_moves_camera": false,
+    "locomotion": "sim_step",
+    "agent_height_m": 0.88,
+    "agent_radius_m": 0.18,
+    "allow_sliding": false,
+    "rgb": {
+      "width": 640,
+      "height": 480,
+      "hfov_deg": 79.0,
+      "position": [
+        0.0,
+        0.88,
+        0.0
+      ]
+    },
+    "depth": {
+      "width": 640,
+      "height": 480,
+      "hfov_deg": 79.0,
+      "position": [
+        0.0,
+        0.88,
+        0.0
+      ]
+    },
+    "navmesh": {
+      "kind": "recompute",
+      "agent_radius": 0.18,
+      "agent_height": 0.88,
+      "agent_max_climb": 0.1,
+      "cell_height": 0.05,
+      "fallback": null
+    }
+  },
+  "seed": 20261019,
+  "max_actions_per_goal": 500,
+  "success_distance_m": 0.25,
+  "goal_adapter_commit": "2a4ca1fe68f15581b1706bce8690d3fe0c500df8",
+  "navmesh_protocol": {
+    "source_commit": "3f2cd6e37a7f06818f515b480b0e81293a8269af",
+    "preset": "stretch",
+    "agent_overrides": {
+      "agent_radius": 0.18,
+      "agent_height": 0.88
+    },
+    "include_static_objects": true,
+    "settings": {
+      "agent_height": 0.8799999952316284,
+      "agent_max_climb": 0.10000000149011612,
+      "agent_max_slope": 45.0,
+      "agent_radius": 0.18000000715255737,
+      "cell_height": 0.05000000074505806,
+      "cell_size": 0.05000000074505806,
+      "detail_sample_dist": 6.0,
+      "detail_sample_max_error": 1.0,
+      "edge_max_error": 1.2999999523162842,
+      "edge_max_len": 12.0,
+      "filter_ledge_spans": true,
+      "filter_low_hanging_obstacles": true,
+      "filter_walkable_low_height_spans": true,
+      "include_static_objects": true,
+      "region_merge_size": 20.0,
+      "region_min_size": 20.0,
+      "verts_per_poly": 6.0
+    }
+  },
+  "local_policy": "habitat_sim_shortest_path_follower",
+  "pointnav_model_loaded": false,
+  "local_waypoint_radius_m": 0.25,
+  "object_stop_radius_m": 0.9,
+  "local_policy_uses_navmesh_geometry": true,
+  "local_policy_uses_ground_truth_goal": false,
+  "policy_inputs": [
+    "rgb",
+    "normalized_depth",
+    "gps",
+    "compass",
+    "heading",
+    "goal_attributes"
+  ],
+  "historical_completed_levels": [
+    "object",
+    "room"
+  ],
+  "cli_supported_levels": [
+    "object",
+    "room",
+    "region",
+    "instance"
+  ],
+  "vlfm_defaults": {
+    "name": "HabitatITMPolicy",
+    "text_prompt": "Seems like there is a target_object ahead.",
+    "pointnav_policy_path": "data/pointnav_weights.pth",
+    "depth_image_shape": [
+      224,
+      224
+    ],
+    "pointnav_stop_radius": 0.9,
+    "use_max_confidence": false,
+    "object_map_erosion_size": 5,
+    "exploration_thresh": 0.0,
+    "obstacle_map_area_threshold": 1.5,
+    "min_obstacle_height": 0.61,
+    "max_obstacle_height": 0.88,
+    "hole_area_thresh": 100000,
+    "use_vqa": false,
+    "vqa_prompt": "Is this ",
+    "coco_threshold": 0.8,
+    "non_coco_threshold": 0.4,
+    "agent_radius": 0.18
+  }
+}

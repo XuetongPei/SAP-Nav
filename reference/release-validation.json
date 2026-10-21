@@ -1,0 +1,83 @@
+{
+  "validated_at_utc": "2026-10-21T11:42:33.581470+00:00",
+  "supported_levels": [
+    "object",
+    "room",
+    "region",
+    "instance"
+  ],
+  "default_levels": [
+    "object",
+    "room"
+  ],
+  "tests": {
+    "simulator_protocol_and_runner": {
+      "passed": 23,
+      "command": "python -m pytest -q tests/test_runner.py test_langmap"
+    },
+    "policy_request_locking": {
+      "passed": 2,
+      "command": "python -m pytest -q tests/test_server_wrapper.py"
+    }
+  },
+  "data_preflight": {
+    "counts": {
+      "object": 1460,
+      "room": 2289,
+      "region": 2687,
+      "instance": 2878
+    },
+    "total": 9314,
+    "canonical_annotation_scenes": 36,
+    "matched_original_fields": [
+      "selected_ids_sha256",
+      "goal_attributes_sha256",
+      "body",
+      "navmesh_protocol",
+      "seed",
+      "max_actions_per_goal",
+      "success_distance_m",
+      "local_policy",
+      "local_waypoint_radius_m",
+      "object_stop_radius_m"
+    ],
+    "selected_ids_sha256": "4555e27dea3478fb2cc7b7ac96e4f70bdbc23dc79916ccf391c1af2daf52c079",
+    "goal_attributes_sha256": "1e02b9c6379e3ea1bb245fe6818617fd597b3f1317d1a99d3698459e74180000"
+  },
+  "resume": {
+    "identical_protocol_accepted": true,
+    "changed_seed_rejected": true,
+    "manifest_preserved_after_rejection": true
+  },
+  "algorithm_identity": {
+    "evaluate_scores_proprioception_ast_identical": true,
+    "world_local_follower_text_adapter_policy_worker_byte_identical": true,
+    "mapping_and_policy_byte_identical": true,
+    "modified_model_interface_files": [
+      "vlfm/vlm/server_wrapper.py",
+      "vlfm/vlm/yolov7.py"
+    ],
+    "changes": "Only runtime lock directory and external YOLO source lookup changed in these model interface files."
+  },
+  "cpu_policy_initialization": {
+    "passed": true,
+    "local_device": "cpu",
+    "pointnav_network_loaded": false
+  },
+  "static_checks": {
+    "python_ast": true,
+    "shell_syntax": true,
+    "personal_absolute_paths_found": false,
+    "binary_assets_in_release": false
+  },
+  "source_checkout_preservation": {
+    "code_files_checked": 97,
+    "all_hashes_unchanged": true,
+    "git_status_unchanged": true
+  },
+  "limitations": [
+    "No NVIDIA GPU was available during packaging; new GPU model-service startup and end-to-end rendering/inference were not run.",
+    "Installation commands were reviewed against the existing frozen environments and source metadata; a full fresh three-environment installation was not executed.",
+    "Full reference metrics exist only for object and room. Region and instance are supported and data-validated, without full reference scores."
+  ]
+}

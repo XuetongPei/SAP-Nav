@@ -1,0 +1,44 @@
+{
+  "name": "swinb_sam21_large_fp32",
+  "per_model_batch_size": 1,
+  "models": {
+    "grounding_dino": {
+      "filename": "groundingdino_swinb_cogcoor.pth",
+      "url": "https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha2/groundingdino_swinb_cogcoor.pth",
+      "sha256": "46270f7a822e6906b655b729c90613e48929d0f2bb8b9b76fd10a856f3ac6ab7",
+      "variant": "SwinB",
+      "precision": "float32"
+    },
+    "sam": {
+      "filename": "sam2.1_hiera_large.pt",
+      "url": "https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_large.pt",
+      "sha256": "2647878d5dfa5098f2f8649825738a9345572bae2d4350a2468587ece47dd318",
+      "variant": "SAM2.1 Hiera-L",
+      "precision": "float32"
+    },
+    "yolov7": {
+      "filename": "yolov7-e6e.pt",
+      "url": "https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt",
+      "sha256": "b370120a414bf32b5d65fc808e5a32c8d9b3c63902d1bc41894fc9d86eccf9cb",
+      "variant": "E6E",
+      "precision": "float16"
+    },
+    "blip2": {
+      "filename": "blip2_pretrained.pth",
+      "url": "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained.pth",
+      "sha256": "f31f96e4a97ce9ac7a140ea1961b8a871822ae1cd0a23f0f1122fbefd70db9f0",
+      "variant": "blip2_image_text_matching/pretrain",
+      "match_head": "itc"
+    },
+    "eva_vit": {
+      "filename": "eva_vit_g.pth",
+      "url": "https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/eva_vit_g.pth",
+      "sha256": "99d2bb36c6b52c94fe6e2e12373afb27de57ae81378c3d8c53bf0e83b0f4275f",
+      "precision": "float16"
+    }
+  },
+  "bert": {
+    "repo_id": "bert-base-uncased",
+    "revision": "86b5e0934494bd15c9632b12f734a8a67f723594"
+  }
+}

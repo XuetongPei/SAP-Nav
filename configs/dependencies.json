@@ -1,0 +1,22 @@
+{
+  "GroundingDINO": {
+    "repository": "https://github.com/IDEA-Research/GroundingDINO.git",
+    "commit": "eeba084341aaa454ce13cb32fa7fd9282fc73a67"
+  },
+  "yolov7": {
+    "repository": "https://github.com/WongKinYiu/yolov7.git",
+    "commit": "a207844b1ce82d204ab36d87d496728d3d2348e7"
+  },
+  "sam2": {
+    "repository": "https://github.com/facebookresearch/sam2.git",
+    "commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4"
+  },
+  "frontier_exploration": {
+    "repository": "https://github.com/naokiyokoyama/frontier_exploration.git",
+    "commit": "8523aa857e4b81d15e14a506fe94a77d5f2e7d5d"
+  },
+  "depth_camera_filtering": {
+    "repository": "https://github.com/naokiyokoyama/depth_camera_filtering.git",
+    "commit": "39d6e2f391c8b2198a67ad96f94bf6da0acd48a0"
+  }
+}

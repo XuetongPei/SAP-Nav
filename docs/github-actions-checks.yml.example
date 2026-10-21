@@ -1,0 +1,15 @@
+name: CPU checks
+on: [push, pull_request]
+jobs:
+  launcher:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pytest
+      - run: python -m compileall -q scripts vlfm third_party
+      - run: python -m pytest -q tests/test_runner.py
+      - run: python -m scripts.run --plan --levels object room region instance
+      - run: bash -n scripts/env.sh scripts/install_envs.sh
